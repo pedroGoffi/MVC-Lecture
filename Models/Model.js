@@ -1,6 +1,8 @@
-class Model{
-    constructor(){
-        console.log("working");
-    }
+function getFilePath(route){}
+function parseURL(route){}
+function get(route){
+    return route;
 }
-module.exports = Model;
+module.exports = {
+    get: get
+};

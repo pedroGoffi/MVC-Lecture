@@ -1,5 +1,6 @@
 {
   "server":{
     "port":"6969"
-  }
+  },
+  "dir":"/home/pietra/Desktop/programacao/javascript/Facebook_2.0"
 }

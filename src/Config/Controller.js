@@ -11,8 +11,8 @@ server.get("/:route*?", (req, res) => {
         req.params.route = "index";
     }
     try{
-        let _Controller_ = require(`../../Controller/${req.params.route}Controller.js`);
-        _Controller_.parse(req.params[0], res);
+        let _Controller_ = require(`../../Controller/Controller.js`);
+        _Controller_.parse(req.params, res);
     } catch (err) {
         let _Controller_ = require("./OnLoadError.js");
         _Controller_.parse(req.params.route, res, err);
