@@ -2,8 +2,20 @@ const Model = require("../Models/Model.js");
 const View  = require("../Views/View.js")
 function parse(route, res){
     route.route = route.route || "index";
-    let data = Model.get(route);
-    let view = View.get(data, route);
+    isCommon = false;
+    [   "png",  "css",
+        "js"
+    ].forEach( type => {
+        if (route.route.endsWith(type)){
+            isCommon = true;
+            return;
+        }
+    });
+    let context = null;
+    if(!isCommon){
+        context = Model.get(route);
+    } 
+    let view = View.get(context, route);
     View.load(view, res);
 }
 
